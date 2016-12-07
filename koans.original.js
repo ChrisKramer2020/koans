@@ -6,23 +6,23 @@ const __ = undefined
  */
 
 test('What will satisfy the truthy assertion?', t => {
-  t.truthy(__)
+  t.truthy('potatoes')
 })
 
 test('What is a falsey value?', t => {
-  t.falsy(__)
+  t.falsy(false)
 })
 
 test('What is true?', t => {
-  t.true(__)
+  t.true(true)
 })
 
 test('What is false?', t => {
-  t.false(__)
+  t.false(false)
 })
 
 test('What will satisfy the equality assertion?', t => {
-  t.is(__, 1 + 1)
+  t.is(2, 1 + 1)
 })
 
 test('What will satisfy the inequality assertion?', t => {

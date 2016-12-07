@@ -6,27 +6,27 @@ const __ = undefined
  */
 
 test('What will satisfy the truthy assertion?', t => {
-  t.truthy('potatoes')
+  t.truthy('truthy')
 })
 
 test('What is a falsey value?', t => {
-  t.falsy(false)
+  t.falsy('falsey')
 })
 
 test('What is true?', t => {
-  t.true(true)
+  t.true('true')
 })
 
 test('What is false?', t => {
-  t.false(false)
+  t.false('false')
 })
 
-test('What will satisfy the t.isity assertion?', t => {
+test('What will satisfy the equality assertion?', t => {
   t.is(2, 1 + 1)
 })
 
-test('What will satisfy the int.isity assertion?', t => {
-  t.not(__, 1 + 1)
+test('What will satisfy the inequality assertion?', t => {
+  t.not(4, 1 + 1)
 })
 
 /**
@@ -34,7 +34,7 @@ test('What will satisfy the int.isity assertion?', t => {
  */
 
 test('What is addition?', t => {
-  t.is(28 + 42, 70)
+  t.is(28 + 14, 42)
 })
 
 test('What is assignment addition?', t => {
@@ -45,7 +45,7 @@ test('What is assignment addition?', t => {
 })
 
 test('What is subtraction?', t => {
-  t.is(30 - 21, 9)
+  t.is(30 - 9, 21)
 })
 
 test('What is assignment subtraction?', t => {
@@ -133,7 +133,7 @@ test('Assigning a value to a local variable.', t => {
  * Numbers
  */
 
-test('Are itegers and floats the same type?', t => {
+test('Are integers and floats the same type?', t => {
   const typeOfInteger = typeof 6
   const typeOfFloat = typeof 3.14159
 
@@ -143,11 +143,11 @@ test('Are itegers and floats the same type?', t => {
 test('What is the javascript numeric type?', t => {
   const typeOfInteger = typeof 42
 
-  t.is(typeOfInteger, typeOfInteger)
+  t.is('number', typeOfInteger)
 })
 
 test('What is a integer number equivalent to 1.0?', t => {
-  t.is(1.0, 1.0)
+  t.is(1, 1.0)
 })
 
 test('What is NaN?', t => {
@@ -185,7 +185,7 @@ test('What is string concatenation?', t => {
 test('What are character escape sequences?', t => {
   const stringWithAnEscapedCharacter = '\u0041pple'
 
-  t.is('\u0041pple', stringWithAnEscapedCharacter, '')
+  t.is('Apple', stringWithAnEscapedCharacter, '')
 })
 
 test('How do you find the length of a string?', t => {
@@ -307,7 +307,7 @@ test('What are stack methods on arrays?', t => {
   t.is('first', stack.pop())
 })
 
-test('What are queue methods on arrays', t => {
+test('What are queue methods on arrays?', t => {
   const queue = []
   queue.push('first')
   queue.push('second')
@@ -350,4 +350,79 @@ test('Accessing object properties with strings.', t => {
 
   t.is(person['name'], 'Amory Blaine')
   t.is(person['age'], 102)
+})
+
+/**
+ * Regular Expressions
+ */
+
+//test('What is executing a regular expression', (t) => {
+  //const numberFinder = /(\d).*(\d)/
+  //const results = numberFinder.exec('what if 6 turned out to be 9?')
+  //t.is(results, [__, __, __])
+})
+
+test('Does the string provided contain "select"?', (t) => {
+  const containsSelect = /select/.test('  select * from users ')
+  t.is(true, containsSelect)
+})
+
+test('What is the value of matches?', (t) => {
+  const matches = 'what if 6 turned out to be 9?'.match(/(\d)/g)
+  t.true(matches.equalTo([0, 1 ]), '')
+})
+
+test('What is the value of pie?', (t) => {
+  let pie = 'apple pie'.replace('apple', 'strawberry')
+  t.is('strawberry', pie)
+
+  pie = 'what if 6 turned out to be 9?'.replace(/\d/g, function (number) { // the second parameter can be a string or a function
+    const map = {'6': 'six', '9': 'nine'}
+    return map[number]
+  })
+  t.is('what if 6 turned out to be 9?', pie)
+})
+
+/**
+ * Enumerating
+ */
+
+test('Use filter to return array items that meet a criteria', (t) => {
+  const numbers = [1, 2, 3]
+  const odd = numbers.filter((x) => {
+    return x % 2 !== 0
+  })
+
+  t.is(3, numbers.length)
+  t.is(0, odd)
+  t.is(2, odd.length)
+})
+
+test('Use map to transform each element', (t) => {
+  const numbers = [1, 2, 3]
+  const numbersPlus1 = numbers.map((x) => {
+    return x + 1
+  })
+
+  t.is(__, numbersPlus1)
+  t.is(__, numbers)
+})
+
+test('Use reduce to update the same result on each iteration', (t) => {
+  const numbers = [1, 2, 3]
+  const sum = numbers.reduce((memo, x) => {
+    return memo + x
+  }, 0)
+
+  t.is(__, sum)
+  t.is(__, numbers)
+})
+
+test('Use reduce to update the same result on each iteration', (t) => {
+  const onlyEven = [2, 4, 6]
+  const mixedBag = [2, 4, 5, 6]
+  const isEven = (x) => { return x % 2 === 0 }
+
+  t.is(__, onlyEven.any(isEven))
+  t.is(__, mixedBag.any(isEven))
 })
