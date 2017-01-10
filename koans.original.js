@@ -1,5 +1,5 @@
 import test from 'ava'
-const __ = undefined
+// const __ = undefined
 
 /**
  * Assertions
@@ -291,8 +291,8 @@ test('What is the length of of an array?', t => {
   t.is(3, ['a', 'b', 'c'].length)
 })
 
-<<<<<<< HEAD
-=======
+// <<<<<<< HEAD
+// =======
 test('What is slicing an array', t => {
   const daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
   const workingWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
@@ -300,7 +300,7 @@ test('What is slicing an array', t => {
   t.deepEqual(daysOfWeek.slice(0, 5), workingWeek)
 })
 
->>>>>>> bb389d63e4ae5e70a1acd8dbdfcf9c17c5a36bb8
+// >>>>>>> bb389d63e4ae5e70a1acd8dbdfcf9c17c5a36bb8
 test('What are stack methods on arrays?', t => {
   const stack = []
   stack.push('first')
@@ -359,28 +359,28 @@ test('Accessing object properties with strings.', t => {
  * Regular Expressions
  */
 
-<<<<<<< HEAD
-=======
-//test('What is executing a regular expression', (t) => {
-  //const numberFinder = /(\d).*(\d)/
-  //const results = numberFinder.exec('what if 6 turned out to be 9?')
-  //t.is(results, [__, __, __])
-})
+// <<<<<<< HEAD
+// =======
+// test('What is executing a regular expression', (t) => {
+  // const numberFinder = /(\d).*(\d)/
+  // const results = numberFinder.exec('what if 6 turned out to be 9?')
+  // t.is(results, [__, __, __])
+// })
 
->>>>>>> bb389d63e4ae5e70a1acd8dbdfcf9c17c5a36bb8
+// >>>>>>> bb389d63e4ae5e70a1acd8dbdfcf9c17c5a36bb8
 test('Does the string provided contain "select"?', (t) => {
   const containsSelect = /select/.test('  select * from users ')
   t.is(true, containsSelect)
 })
 
-<<<<<<< HEAD
-=======
+// <<<<<<< HEAD
+// =======
 test('What is the value of matches?', (t) => {
   const matches = 'what if 6 turned out to be 9?'.match(/(\d)/g)
-  t.true(matches.equalTo([0, 1 ]), '')
+  t.true(matches.equalTo([ 0, 1 ]), '')
 })
 
->>>>>>> bb389d63e4ae5e70a1acd8dbdfcf9c17c5a36bb8
+// >>>>>>> bb389d63e4ae5e70a1acd8dbdfcf9c17c5a36bb8
 test('What is the value of pie?', (t) => {
   let pie = 'apple pie'.replace('apple', 'strawberry')
   t.is('strawberry', pie)
@@ -402,15 +402,15 @@ test('Use filter to return array items that meet a criteria', (t) => {
     return x % 2 !== 0
   })
 
-<<<<<<< HEAD
-  t.is(__, numbers.length)
-  t.deepEqual([__], odd)
-  t.is(__, odd.length)
-=======
+// <<<<<<< HEAD
+  t.is(3, numbers.length)
+  t.deepEqual([0], odd)
+  t.is(2, odd.length)
+// =======
   t.is(3, numbers.length)
   t.is(0, odd)
   t.is(2, odd.length)
->>>>>>> bb389d63e4ae5e70a1acd8dbdfcf9c17c5a36bb8
+// >>>>>>> bb389d63e4ae5e70a1acd8dbdfcf9c17c5a36bb8
 })
 
 test('Use map to transform each element', (t) => {
@@ -419,8 +419,8 @@ test('Use map to transform each element', (t) => {
     return x + 1
   })
 
-  t.deepEqual(__, numbersPlus1)
-  t.deepEqual(__, numbers)
+  t.deepEqual([2, 3, 4], numbersPlus1)
+  t.deepEqual([1, 2, 3], numbers)
 })
 
 test('Use reduce to update the same result on each iteration', (t) => {
@@ -429,8 +429,8 @@ test('Use reduce to update the same result on each iteration', (t) => {
     return memo + x
   }, 0)
 
-  t.is(__, sum)
-  t.deepEqual(__, numbers)
+  t.is(6, sum)
+  t.deepEqual([1, 2, 3], numbers)
 })
 
 test('Use some and every to determine if a function applied to any or all items is true', (t) => {
@@ -438,6 +438,6 @@ test('Use some and every to determine if a function applied to any or all items 
   const mixedBag = [2, 4, 5, 6]
   const isEven = x => x % 2 === 0
 
-  t.is(__, onlyEven.every(isEven))
-  t.is(__, mixedBag.some(isEven))
+  t.is(true, onlyEven.every(isEven))
+  t.is(true, mixedBag.some(isEven))
 })

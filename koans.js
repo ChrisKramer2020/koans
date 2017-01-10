@@ -1,12 +1,12 @@
 import test from 'ava'
-const __ = undefined
+// const __ = undefined
 
 /**
  * Assertions
  */
 
 test('What will satisfy the truthy assertion?', t => {
-  t.truthy(true)
+  t.truthy('truthy')
 })
 
 test('What is a falsey value?', t => {
@@ -26,7 +26,7 @@ test('What will satisfy the equality assertion?', t => {
 })
 
 test('What will satisfy the inequality assertion?', t => {
-  t.not(__, 1 + 1)
+  t.not(4, 1 + 1)
 })
 
 /**
@@ -80,7 +80,7 @@ test('What is equality with type coercion?', t => {
   const quotedNumber = '3'
 
   // eslint-disable-next-line eqeqeq
-  t.true(quotedNumber == '3')
+  t.true(quotedNumber == 3)
 })
 
 /**
@@ -91,31 +91,31 @@ test('What is equality with type coercion?', t => {
 test('What is the truthyness of positive numbers?', t => {
   const oneIsTruthy = !!1
 
-  t.is(!!1, oneIsTruthy)
+  t.is(true, oneIsTruthy)
 })
 
 test('What is the truthyness of negative numbers?', t => {
   const negativeOneIsTruthy = !!-1
 
-  t.is(!!-1, negativeOneIsTruthy)
+  t.is(true, negativeOneIsTruthy)
 })
 
 test('What is the truthyness of zero?', t => {
   const zeroIsTruthy = !!0
 
-  t.is(!!0, zeroIsTruthy)
+  t.is(false, zeroIsTruthy)
 })
 
 test('What is the truthyness of null?', t => {
   const nullIsTruthy = !!null
 
-  t.is(!!null, nullIsTruthy)
+  t.is(false, nullIsTruthy)
 })
 
 test('What is the truthyness of undefined?', t => {
   const undefinedIsTruthy = !!undefined
 
-  t.is(!!undefined, undefinedIsTruthy)
+  t.is(false, undefinedIsTruthy)
 })
 
 /**
@@ -133,7 +133,7 @@ test('Assigning a value to a local variable.', t => {
  * Numbers
  */
 
-test('Are itegers and floats the same type?', t => {
+test('Are integers and floats the same type?', t => {
   const typeOfInteger = typeof 6
   const typeOfFloat = typeof 3.14159
 
@@ -220,7 +220,7 @@ test('What is a for loop?', t => {
     counter = counter + i
   }
 
-  t.is(counter, counter)
+  t.is(16, counter)
 })
 
 test('What is a ternary operator?', t => {
@@ -291,6 +291,14 @@ test('What is the length of of an array?', t => {
   t.is(3, ['a', 'b', 'c'].length)
 })
 
+test('What is slicing an array', t => {
+  const daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+  const workingWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
+
+  t.deepEqual(daysOfWeek.slice(0, 5), workingWeek)
+})
+
+// >>>>>>> bb389d63e4ae5e70a1acd8dbdfcf9c17c5a36bb8
 test('What are stack methods on arrays?', t => {
   const stack = []
   stack.push('first')
@@ -349,11 +357,28 @@ test('Accessing object properties with strings.', t => {
  * Regular Expressions
  */
 
+// <<<<<<< HEAD
+// =======
+// test('What is executing a regular expression', (t) => {
+  // const numberFinder = /(\d).*(\d)/
+  // const results = numberFinder.exec('what if 6 turned out to be 9?')
+  // t.is(results, [__, __, __])
+// })
+
+// >>>>>>> bb389d63e4ae5e70a1acd8dbdfcf9c17c5a36bb8
 test('Does the string provided contain "select"?', (t) => {
   const containsSelect = /select/.test('  select * from users ')
   t.is(true, containsSelect)
 })
 
+// <<<<<<< HEAD
+// =======
+// test('What is the value of matches?', (t) => {
+//   const matches = 'what if 6 turned out to be 9?'.match(/(\d)/g)
+//   t.true(matches.equalTo([ 0, 1 ]), 'what if six turned out to be nine?')
+// })
+
+// >>>>>>> bb389d63e4ae5e70a1acd8dbdfcf9c17c5a36bb8
 test('What is the value of pie?', (t) => {
   let pie = 'apple pie'.replace('apple', 'strawberry')
   t.is('strawberry pie', pie)
