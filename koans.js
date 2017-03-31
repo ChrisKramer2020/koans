@@ -1,12 +1,20 @@
 import test from 'ava'
+<<<<<<< HEAD
 const __ = undefined
+=======
+// const __ = undefined
+>>>>>>> 70f2ccf12b6c405f720a413eb5bdb3038aae7819
 
 /**
  * Assertions
  */
 
 test('What will satisfy the truthy assertion?', t => {
+<<<<<<< HEAD
   t.truthy(true)
+=======
+  t.truthy('truthy')
+>>>>>>> 70f2ccf12b6c405f720a413eb5bdb3038aae7819
 })
 
 test('What is a falsey value?', t => {
@@ -26,7 +34,11 @@ test('What will satisfy the equality assertion?', t => {
 })
 
 test('What will satisfy the inequality assertion?', t => {
+<<<<<<< HEAD
   t.not(0, 1 + 1)
+=======
+  t.not(4, 1 + 1)
+>>>>>>> 70f2ccf12b6c405f720a413eb5bdb3038aae7819
 })
 
 /**
@@ -80,7 +92,11 @@ test('What is equality with type coercion?', t => {
   const quotedNumber = '3'
 
   // eslint-disable-next-line eqeqeq
+<<<<<<< HEAD
   t.true(quotedNumber == '3')
+=======
+  t.true(quotedNumber == 3)
+>>>>>>> 70f2ccf12b6c405f720a413eb5bdb3038aae7819
 })
 
 /**
@@ -126,14 +142,22 @@ test('Assigning a value to a local variable.', t => {
   let one
   one = 1 // eslint-disable-line prefer-const
 
+<<<<<<< HEAD
   t.is(one, one)
+=======
+  t.is(1, one)
+>>>>>>> 70f2ccf12b6c405f720a413eb5bdb3038aae7819
 })
 
 /**
  * Numbers
  */
 
+<<<<<<< HEAD
 test('Are itegers and floats the same type?', t => {
+=======
+test('Are integers and floats the same type?', t => {
+>>>>>>> 70f2ccf12b6c405f720a413eb5bdb3038aae7819
   const typeOfInteger = typeof 6
   const typeOfFloat = typeof 3.14159
 
@@ -143,7 +167,11 @@ test('Are itegers and floats the same type?', t => {
 test('What is the javascript numeric type?', t => {
   const typeOfInteger = typeof 42
 
+<<<<<<< HEAD
   t.is(typeOfInteger, typeOfInteger)
+=======
+  t.is('number', typeOfInteger)
+>>>>>>> 70f2ccf12b6c405f720a413eb5bdb3038aae7819
 })
 
 test('What is a integer number equivalent to 1.0?', t => {
@@ -179,7 +207,11 @@ test('What is string concatenation?', t => {
   const fruit = 'apple'
   const dish = 'pie'
 
+<<<<<<< HEAD
   t.is('applepie', fruit + '' + dish)
+=======
+  t.is('apple pie', fruit + ' ' + dish)
+>>>>>>> 70f2ccf12b6c405f720a413eb5bdb3038aae7819
 })
 
 test('What are character escape sequences?', t => {
@@ -291,6 +323,17 @@ test('What is the length of of an array?', t => {
   t.is(3, ['a', 'b', 'c'].length)
 })
 
+<<<<<<< HEAD
+=======
+test('What is slicing an array', t => {
+  const daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+  const workingWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
+
+  t.deepEqual(daysOfWeek.slice(0, 5), workingWeek)
+})
+
+// >>>>>>> bb389d63e4ae5e70a1acd8dbdfcf9c17c5a36bb8
+>>>>>>> 70f2ccf12b6c405f720a413eb5bdb3038aae7819
 test('What are stack methods on arrays?', t => {
   const stack = []
   stack.push('first')
@@ -349,11 +392,34 @@ test('Accessing object properties with strings.', t => {
  * Regular Expressions
  */
 
+<<<<<<< HEAD
+=======
+// <<<<<<< HEAD
+// =======
+// test('What is executing a regular expression', (t) => {
+  // const numberFinder = /(\d).*(\d)/
+  // const results = numberFinder.exec('what if 6 turned out to be 9?')
+  // t.is(results, [__, __, __])
+// })
+
+// >>>>>>> bb389d63e4ae5e70a1acd8dbdfcf9c17c5a36bb8
+>>>>>>> 70f2ccf12b6c405f720a413eb5bdb3038aae7819
 test('Does the string provided contain "select"?', (t) => {
   const containsSelect = /select/.test('  select * from users ')
   t.is(true, containsSelect)
 })
 
+<<<<<<< HEAD
+=======
+// <<<<<<< HEAD
+// =======
+// test('What is the value of matches?', (t) => {
+//   const matches = 'what if 6 turned out to be 9?'.match(/(\d)/g)
+//   t.true(matches.equalTo([ 0, 1 ]), 'what if six turned out to be nine?')
+// })
+
+// >>>>>>> bb389d63e4ae5e70a1acd8dbdfcf9c17c5a36bb8
+>>>>>>> 70f2ccf12b6c405f720a413eb5bdb3038aae7819
 test('What is the value of pie?', (t) => {
   let pie = 'apple pie'.replace('apple', 'strawberry')
   t.is('strawberry pie', pie)
